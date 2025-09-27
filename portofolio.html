@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Angga Zefanya Situmorang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutral Harmony -->
+    <!-- Application Structure Plan: Menggunakan struktur SPA vertikal dengan navigasi sticky untuk akses cepat ke setiap bagian. Alur dimulai dari perkenalan (Hero), diikuti detail tentang saya, keahlian teknis yang divisualisasikan, proyek unggulan yang didetailkan dengan diagram alur dan grafik performa interaktif, lalu pendidikan, dan diakhiri dengan ajakan untuk kontak. Struktur ini dipilih untuk memandu perekrut secara logis dari gambaran umum ke bukti konkret kemampuan, memaksimalkan dampak dan kemudahan eksplorasi. -->
+    <!-- Visualization & Content Choices: 
+    - Info: Keahlian Teknis -> Goal: Menunjukkan kompetensi -> Viz: Kartu/tag interaktif -> Interaction: Hover effect -> Justification: Lebih menarik visual daripada daftar biasa.
+    - Info: Alur Proyek Klasifikasi Sampah -> Goal: Menjelaskan proses kerja model -> Viz: Diagram alur konseptual (HTML/CSS) -> Interaction: Hover-state pada setiap tahap -> Justification: Mengkomunikasikan proses teknis yang kompleks secara sederhana dan visual.
+    - Info: Performa Model Proyek -> Goal: Memberikan bukti kuantitatif -> Viz: Doughnut Chart (Chart.js), Bar Chart (Chart.js) -> Interaction: Tooltip saat hover -> Justification: Menampilkan metrik performa secara ringkas dan standar industri, menunjukkan kemampuan visualisasi data.
+    - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F7F4;
+            color: #3f3c3a;
+        }
+        .skill-card {
+            transition: all 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .project-arrow {
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Navigasi -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-gray-800">Angga Z. Situmorang</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition">Tentang Saya</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600 transition">Keahlian</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600 transition">Proyek</a>
+                <a href="#education" class="text-gray-600 hover:text-blue-600 transition">Pendidikan</a>
+            </div>
+            <a href="mailto:anggakirani66@gmail.com" class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Hubungi Saya</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-16">
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center py-16 md:py-24">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">Angga Zefanya Situmorang</h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-600">Aspiring Data Scientist | Machine Learning Enthusiast</p>
+            <p class="mt-2 text-md text-gray-500">Mengubah data menjadi wawasan bisnis yang berdampak.</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg">Lihat Proyek Saya</a>
+                <a href="https://www.linkedin.com/in/angga-situmorang-15b76b365/" target="_blank" class="bg-white text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition shadow-lg border border-gray-200">LinkedIn</a>
+            </div>
+        </section>
+
+        <!-- Tentang Saya -->
+        <section id="about" class="py-16 md:py-24 border-t border-gray-200">
+            <h2 class="text-3xl font-bold text-center text-gray-900">Tentang Saya</h2>
+            <div class="mt-12 max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-md">
+                 <p class="text-lg text-gray-700 leading-relaxed text-center">
+                    Saya adalah seorang profesional yang berorientasi pada data dengan latar belakang di Teknik Informatika. Dengan hasrat untuk mengubah data mentah menjadi wawasan yang dapat ditindaklanjuti, saya memiliki keahlian dalam analisis statistik, machine learning, dan visualisasi data. Saya senang memecahkan masalah yang kompleks dan percaya bahwa keputusan berbasis data adalah kunci pertumbuhan bisnis. Saat ini, saya mencari peluang untuk menerapkan keahlian saya dalam lingkungan yang dinamis dan kolaboratif.
+                </p>
+            </div>
+        </section>
+
+        <!-- Keahlian Teknis -->
+        <section id="skills" class="py-16 md:py-24 border-t border-gray-200">
+            <h2 class="text-3xl font-bold text-center text-gray-900">Keahlian Teknis</h2>
+            <p class="text-center mt-4 text-gray-600 max-w-2xl mx-auto">Berikut adalah teknologi dan tools yang saya kuasai untuk mewujudkan proyek data science dari awal hingga akhir.</p>
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="skill-card bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-4xl mb-3">🐍</div>
+                    <h3 class="font-semibold text-lg">Python & SQL</h3>
+                    <p class="text-sm text-gray-500">Bahasa utama untuk analisis & manipulasi data.</p>
+                </div>
+                <div class="skill-card bg-white p-6 rounded-lg shadow-sm text-center">
+                     <div class="text-4xl mb-3">📊</div>
+                    <h3 class="font-semibold text-lg">Analisis Data</h3>
+                    <p class="text-sm text-gray-500">Pandas, NumPy, SciPy</p>
+                </div>
+                 <div class="skill-card bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-4xl mb-3">🤖</div>
+                    <h3 class="font-semibold text-lg">Machine Learning</h3>
+                    <p class="text-sm text-gray-500">Scikit-learn, TensorFlow, Keras</p>
+                </div>
+                <div class="skill-card bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-4xl mb-3">📈</div>
+                    <h3 class="font-semibold text-lg">Visualisasi Data</h3>
+                    <p class="text-sm text-gray-500">Matplotlib, Seaborn, Tableau</p>
+                </div>
+                <div class="skill-card bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-4xl mb-3">🗄️</div>
+                    <h3 class="font-semibold text-lg">Database</h3>
+                    <p class="text-sm text-gray-500">PostgreSQL, MySQL, MongoDB</p>
+                </div>
+                <div class="skill-card bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-4xl mb-3">⚙️</div>
+                    <h3 class="font-semibold text-lg">Tools</h3>
+                    <p class="text-sm text-gray-500">Git, Jupyter, Google Colab</p>
+                </div>
+                <div class="skill-card bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-4xl mb-3">📱</div>
+                    <h3 class="font-semibold text-lg">Mobile Dev</h3>
+                    <p class="text-sm text-gray-500">Flutter (Implementasi Model)</p>
+                </div>
+                <div class="skill-card bg-white p-6 rounded-lg shadow-sm text-center">
+                     <div class="text-4xl mb-3">🧠</div>
+                    <h3 class="font-semibold text-lg">Deep Learning</h3>
+                    <p class="text-sm text-gray-500">CNN, ONNX</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyek Unggulan -->
+        <section id="projects" class="py-16 md:py-24 border-t border-gray-200">
+            <h2 class="text-3xl font-bold text-center text-gray-900">Proyek Unggulan</h2>
+            
+            <!-- Proyek 1: Klasifikasi Sampah -->
+            <div class="mt-12 max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="p-8 md:w-1/2">
+                        <div class="uppercase tracking-wide text-sm text-blue-600 font-semibold">Computer Vision & Mobile App</div>
+                        <h3 class="block mt-1 text-2xl leading-tight font-bold text-black">Klasifikasi Sampah Organik dan Anorganik</h3>
+                        <p class="mt-4 text-gray-600">Mengembangkan model machine learning dengan algoritma CNN untuk mengklasifikasikan gambar sampah. Model ini kemudian diimplementasikan pada aplikasi mobile menggunakan Flutter, bertujuan untuk membantu masyarakat memilah sampah secara otomatis, cepat, dan mudah, guna mendukung proses daur ulang.</p>
+                        
+                        <h4 class="font-semibold mt-6 mb-2 text-gray-800">Teknologi yang Digunakan:</h4>
+                        <div class="flex flex-wrap gap-2">
+                           <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                           <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">CNN</span>
+                           <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Flutter</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">TensorFlow</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">ONNX</span>
+                        </div>
+
+                         <div class="mt-8">
+                             <a href="https://github.com/ANGGASERAM/Klasifikasi-sampah-Organik.git" target="_blank" class="bg-gray-800 text-white px-5 py-3 rounded-lg font-semibold hover:bg-gray-900 transition">Lihat Kode di GitHub</a>
+                         </div>
+                    </div>
+                    <div class="p-8 md:w-1/2 bg-gray-50 flex flex-col justify-center items-center">
+                        <div class="w-full">
+                            <h4 class="font-semibold text-center text-gray-800 mb-4">Alur Kerja Proyek</h4>
+                            <div class="flex items-center justify-center space-x-2 md:space-x-4">
+                                <div class="text-center p-3 bg-white rounded-lg shadow-sm border">
+                                    <div class="text-2xl">📷</div>
+                                    <div class="text-xs mt-1">Input Gambar</div>
+                                </div>
+                                <div class="text-4xl project-arrow">→</div>
+                                <div class="text-center p-3 bg-white rounded-lg shadow-sm border">
+                                    <div class="text-2xl">🧠</div>
+                                    <div class="text-xs mt-1">Model CNN</div>
+                                </div>
+                                <div class="text-4xl project-arrow">→</div>
+                                <div class="text-center p-3 bg-white rounded-lg shadow-sm border">
+                                     <div class="text-2xl">♻️</div>
+                                    <div class="text-xs mt-1">Hasil Klasifikasi</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full mt-8">
+                             <h4 class="font-semibold text-center text-gray-800 mb-4">Performa Model (Akurasi)</h4>
+                             <div class="chart-container relative h-64 md:h-72 w-full max-w-sm mx-auto">
+                                <canvas id="modelPerformanceChart"></canvas>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyek 2: Klasifikasi Parkinson -->
+             <div class="mt-12 max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex flex-row-reverse">
+                    <div class="p-8 md:w-1/2">
+                        <div class="uppercase tracking-wide text-sm text-green-600 font-semibold">Machine Learning & Analisis Komparatif</div>
+                        <h3 class="block mt-1 text-2xl leading-tight font-bold text-black">Perbandingan Algoritma untuk Klasifikasi Penyakit Parkinson</h3>
+                        <p class="mt-4 text-gray-600">Menganalisis dan membandingkan performa tiga algoritma klasifikasi—Naive Bayes, Random Forest, dan Regresi Logistik—untuk memprediksi penyakit Parkinson. Proyek ini bertujuan untuk menentukan model yang paling akurat dan efisien dalam mendeteksi penyakit berdasarkan dataset fitur vokal.</p>
+                        
+                        <h4 class="font-semibold mt-6 mb-2 text-gray-800">Teknologi yang Digunakan:</h4>
+                        <div class="flex flex-wrap gap-2">
+                           <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                           <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Naive Bayes</span>
+                           <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Random Forest</span>
+                           <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Logistic Regression</span>
+                           <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Scikit-learn</span>
+                           <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Pandas</span>
+                        </div>
+
+                         <div class="mt-8">
+                             <a href="https://github.com/ANGGASERAM/Perbandingan_Algoritma_NaiveBayes_RandomForest_RegresiLogistik_Pengklasifikasian_Penyakit_Parkinson.git" target="_blank" class="bg-gray-800 text-white px-5 py-3 rounded-lg font-semibold hover:bg-gray-900 transition">Lihat Kode di GitHub</a>
+                         </div>
+                    </div>
+                    <div class="p-8 md:w-1/2 bg-gray-50 flex flex-col justify-center items-center">
+                        <div class="w-full">
+                             <h4 class="font-semibold text-center text-gray-800 mb-4">Perbandingan Akurasi Algoritma</h4>
+                             <div class="chart-container relative h-80 w-full max-w-md mx-auto">
+                                <canvas id="modelComparisonChart"></canvas>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pendidikan -->
+        <section id="education" class="py-16 md:py-24 border-t border-gray-200 text-center">
+            <h2 class="text-3xl font-bold text-gray-900">Pendidikan</h2>
+            <div class="mt-8">
+                <p class="text-xl text-gray-800 font-semibold">S1 Teknik Informatika</p>
+                <p class="text-lg text-gray-600">Universitas Mikroskil</p>
+                <p class="text-md text-gray-500">Lulus: 2025</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h3 class="text-2xl font-bold">Tertarik untuk berkolaborasi?</h3>
+            <p class="mt-2 text-gray-300">Saya selalu terbuka untuk mendiskusikan proyek baru atau peluang kerja.</p>
+            <div class="mt-6">
+                <a href="mailto:anggakirani66@gmail.com" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Kirim Email</a>
+            </div>
+            <div class="mt-8 flex justify-center space-x-6">
+                 <a href="https://www.linkedin.com/in/angga-situmorang-15b76b365/" target="_blank" class="text-gray-400 hover:text-white transition">LinkedIn</a>
+                 <a href="https://github.com/ANGGASERAM" target="_blank" class="text-gray-400 hover:text-white transition">GitHub</a>
+            </div>
+            <p class="mt-8 text-sm text-gray-500">&copy; 2025 Angga Zefanya Situmorang. Dibuat dengan antusiasme.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Logika untuk smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Chart untuk Proyek 1: Klasifikasi Sampah
+            const ctx1 = document.getElementById('modelPerformanceChart').getContext('2d');
+            const modelPerformanceChart = new Chart(ctx1, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Akurasi', 'Data Lain'],
+                    datasets: [{
+                        label: 'Performa Model',
+                        data: [95.7, 4.3],
+                        backgroundColor: [
+                            'rgba(59, 130, 246, 0.8)',
+                            'rgba(229, 231, 235, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(59, 130, 246, 1)',
+                            'rgba(229, 231, 235, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                           display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    if (context.label === 'Akurasi') {
+                                       return 'Akurasi: ' + context.parsed + '%';
+                                    }
+                                    return null;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+
+            // Chart untuk Proyek 2: Perbandingan Algoritma
+            const ctx2 = document.getElementById('modelComparisonChart').getContext('2d');
+            const modelComparisonChart = new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: ['Naive Bayes', 'Random Forest', 'Regresi Logistik'],
+                    datasets: [{
+                        label: 'Akurasi Model (%)',
+                        data: [85.4, 91.2, 88.7], // Data akurasi dari proyek Anda
+                        backgroundColor: [
+                            'rgba(251, 146, 60, 0.8)',
+                            'rgba(59, 130, 246, 0.8)',
+                            'rgba(16, 185, 129, 0.8)'
+                        ],
+                        borderColor: [
+                           'rgba(251, 146, 60, 1)',
+                           'rgba(59, 130, 246, 1)',
+                           'rgba(16, 185, 129, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100,
+                             grid: {
+                                color: 'rgba(229, 231, 235, 0.5)'
+                            }
+                        },
+                         y: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                         tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.x !== null) {
+                                        label += context.parsed.x + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
